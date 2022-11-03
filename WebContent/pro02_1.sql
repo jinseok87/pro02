@@ -26,5 +26,7 @@ insert into notice(title,content,author) values("테스트글2","테스트내용
 insert into notice(title,content,author) values("테스트3","테스트내용3","admin");
 commit;
 
+
 select * from notice order by notiNo desc;
 select * from custom;
+

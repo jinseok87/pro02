@@ -18,23 +18,43 @@ public class MamberAddProCtrl extends HttpServlet {
 	private static final String URL = "jdbc:mysql://localhost:3306/myshop1?servetTimezone=Aisa/Seoul";
 	private static final String USER = "roop";
 	private static final String PASS = "a1234";
-	String sql ="";
-	String cusId = "";
-	
+	String sql = "";
+	String cusId ="";
+	String cusPw ="";
+	String cusName ="";
+	String address = "";
+	String tel = "";
+	int cnt = 0;
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String cusId = request.getParameter(cusId);
-		String cusPw = request.getParameter(cusPw);
-		String cusName = request.getParameter(cusName);
-		String address = request.getParameter(address);
-		String tel = request.getParameter(tel);
+		
+		String CusId = request.getParameter(cusId);
+		String CusPw = request.getParameter(cusPw);
+		String CusName = request.getParameter(cusName);
+		String Address = request.getParameter(address);
+		String Tel = request.getParameter(tel);
 		try {
 			Class.forName(DRIVER);
 			Connection con = DriverManager.getConnection(URL,USER,PASS);
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			sql = "insert into custum(cusId, cusPw,cusName, address, tel) values(?,?,?,?,?)";
-			pstmt.setString(1, cusId);
-		} catch (Exception e) {
+			sql = "insert into custum(CusId, CusPw,CusName, Address, Tel) values(?,?,?,?,?)";
+			pstmt.setString(1, CusId);
+			pstmt.setString(2, CusPw);
+			pstmt.setString(3, CusName);
+			pstmt.setString(4, Address);
+			pstmt.setString(5, Tel);
+			cnt = pstmt.executeUpdate();
 			
+			if(cnt>=1){
+				response.sendRedirect("index.jsp");
+			}else{
+				response.sendRedirect("./custom/join.jsp");
+			}
+			
+			con.close();
+			pstmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 

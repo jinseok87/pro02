@@ -12,7 +12,7 @@
 <%
 	Notice vo = (Notice) request.getAttribute("notice");
 %>
-<div class="content container">
+<div class="content">
 	<h2 class="title">공지사항 목록</h2>
 	<table class="table">
 		<tbody>
@@ -38,9 +38,9 @@
 			</tr>
 		</tbody>
 	</table>
-	<div class="btn-group">
-		<a href="<%=request.getContextPath() %>GetBoardListCtrl" class="btn btn-danger">목록으로</a>
-		<a href = "<%=request.getContextPath() %>UpdateBoardCtrl?notiNo=<%=vo.getNotiNo()%>">글 수정</a>
+	<div class="bt_group">
+		<a href="<%=request.getContextPath() %>GetBoardListCtrl" class="bt_link">목록으로</a>
+		<a href = "<%=request.getContextPath() %>UpdateBoardCtrl?notiNo=<%=vo.getNotiNo()%>" class="bt_link">글 수정</a>
 	</div>
 </div>
 </body>

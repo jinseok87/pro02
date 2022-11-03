@@ -2,8 +2,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+ <meta charset="utf-8">
 <head>
+
 <meta charset="UTF-8">
+
 <title>메인화면</title>
 </head>
 <body>

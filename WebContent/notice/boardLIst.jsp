@@ -5,16 +5,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>공지사항 목록</title>
-
 </head>
 <body>
+<%@ include file="../header.jsp" %>
 <%
 	List<Notice> notiList = (ArrayList<Notice>) request.getAttribute("notiList");
 %>
-<div class="content container">
+<div class="content">
 	<h2 class="title">공지사항 목록</h2>
-		<table class="table">
+	<table class="table">
 		<thead>
 			<tr>
 				<th>연번</th><th>제목</th><th>작성일</th>
@@ -25,14 +26,16 @@
 			Notice vo = notiList.get(i);
 		%>
 		<tr>
-			<td><%=vo.getNotiNo() %></td>
-			<td><a href="<%=request.getContextPath()%>GetBoardDetailCtrl?notiNo=<%=vo.getNotiNo() %>"><%=vo.getTitle() %></a></td>
+			<td><%=notiList.size()-i %></td>
+			<td><a href="GetBoardDetailCtrl?notiNo=<%=vo.getNotiNo() %>"><%=vo.getTitle() %></a></td>
 			<td><%=vo.getResDate() %></td>
 		</tr>
 		<% } %>	
 		</tbody>
-		<a href = "<%=request.getContextPath() %>insertBoard.jsp">글 추가</a>
 	</table>
+	<div class="bt-group">
+		<a href="./notice/insertBoard.jsp" class="btn btn-danger">글 등록</a>
+	</div>
 </div>
 </body>
 </html>

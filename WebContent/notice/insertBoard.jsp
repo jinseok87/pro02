@@ -7,6 +7,7 @@
 <title>글추가</title>
 </head>
 <body>
+	<h2>글추가</h2>
 	<form action="<%=request.getContextPath()%>InsertBoradProCtrl" method="post" class="frm1">
 		<table class="table">
 		 	<tbody>
