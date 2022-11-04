@@ -1,8 +1,8 @@
 create database myshop1;
 commit;
 use myshop1;
-create table custom(
-	cusId varchar(13) primary key,
+create table custum(
+	sucId varchar(13) primary key,
     cusPw varchar(50) not null,
     cusName varchar(30) not null,
     address varchar(500) not null,
@@ -26,7 +26,10 @@ insert into notice(title,content,author) values("테스트글2","테스트내용
 insert into notice(title,content,author) values("테스트3","테스트내용3","admin");
 commit;
 
+create table category(
+	cateNo int primary key auto_increment,
+	cateName varchar(50)
+);
 
 select * from notice order by notiNo desc;
-select * from custom;
-
+select * from category;
