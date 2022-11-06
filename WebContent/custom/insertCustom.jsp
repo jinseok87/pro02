@@ -1,58 +1,88 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 <title>회원가입페이지</title>
+<style>
+.container {
+	text-align: center;
+	width: 700px;
+	height: 1200px;
+}
+
+.title {
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+
+th {
+	text-align: right;
+}
+
+td {
+	text-align: left;
+}
+
+table input {
+	width: 300px;
+	height: 40px;
+}
+
+#id {
+	width: 200px;
+}
+
+.btn1 {
+	font-size: 15px;
+	width: 150px;
+	height: 40px;
+	margin-bottom: 6px;
+}
+</style>
 </head>
 <body>
-	<div class="form_wrap">
+	<div class="container">
 		<h2 class="title">회원가입</h2>
-		<form class="frm1"
-			action="<%=request.getContextPath()%>/InsertCustomCtrl" method="post"
-			onsubmit="return joinCheck(this)">
+		<form class="frm1" action="<%=request.getContextPath()%>/InsertCustomCtrl" method="post" onsubmit="return joinCheck(this)">
 			<table class="table">
 				<tbody>
 					<tr>
-						<th>아이디</th>
-						<td>
-							<input type="text" name="cusId" id="id"placeholder="아이디입력" class="form_input" autofocus required>
-							<input type="button" class="btn" value="아이디 중복 확인"	onclick="idCheck()"> 
-							<input type="hidden" name="idck"value="no" />
-						</td>
+						<th >아이디</th>
+						<td><input type="text" name="cusId" id="id" placeholder="아이디입력" class="form_input" autofocus required> <input type="button" class="btn1 btn btn-dark" value="ID 중복확인" onclick="idCheck()"> <input type="hidden" name="idck" value="no" /></td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>
-						<td><input type="password" name="cusPw" id="pw"placeholder="비밀번호입력" class="form_input" required></td>
+						<td><input type="password" name="cusPw" id="pw" placeholder="비밀번호입력" class="form_input" required></td>
 					</tr>
 					<tr>
 						<th>비밀번호확인</th>
-						<td><input type="password" id="pw2" placeholder=" 비밀번호확인"class="form_input" required></td>
+						<td><input type="password" id="pw2" placeholder=" 비밀번호확인" class="form_input" required></td>
 					</tr>
 					<tr>
 						<th>이름</th>
-						<td><input type="text" name="cusName" id="name"placeholder="이름입력" required></td>
+						<td><input type="text" name="cusName" id="name" placeholder="이름입력" required></td>
 					</tr>
 					<tr>
 						<th>전화번호</th>
-						<td><input type="tel" name="tel" id="tel"placeholder="전화번호입력" required></td>
+						<td><input type="tel" name="tel" id="tel" placeholder="전화번호입력" required></td>
 					</tr>
 					<tr>
 						<th>주소</th>
 						<td>
-							<button id="post_btn" onclick="findAddr()"class="btn btn-primary">우편번호 검색</button> <br> 
-							<input type="text" name="postcode" id="postcode" placeholder="우편번호"class="form_input"><br> 
-							<input type="text"name="address1" id="address1" placeholder="주소입력" required><br>
-							<input type="text" name="address2" id="address2"placeholder="상세주소" class="form_input" required>
+							<button id="post_btn" onclick="findAddr()" class="btn btn-dark">우편번호 검색</button> <br> <input type="text" name="postcode" id="postcode" placeholder="우편번호" class="form_input"><br> <input type="text" name="address1" id="address1" placeholder="주소입력" required><br> <input type="text" name="address2" id="address2" placeholder="상세주소" class="form_input" required>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="bt_group">
-				<input type="submit" name="bt_submit" class="rg_bt" value="회원가입">
-				<input type="reset" name="bt_reset" class="re_bt" value="취소">
-				<a href="<%=request.getContextPath()%>/custom/login.jsp">로그인</a>
+				<input type="submit" name="bt_submit" class="btn btn-dark" value="가입하기"> <input type="reset" name="bt_reset" class="btn btn-dark" value="취소">
 			</div>
 		</form>
 		<script>
@@ -72,11 +102,11 @@
 					return false;
 				}
 			}   
-		</script>		   
+		</script>
+		   
 		<script>
 			   function findAddr() {
-				new daum.Postcode(
-						{
+				new daum.Postcode(						{
 							oncomplete : function(data) {
 								console.log(data);
 								var roadAddr = data.roadAddress;
@@ -91,9 +121,9 @@
 							}
 						}).open();
 			}   
-		</script>		   
-		<script
-			src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		</script>
+		   
+		<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	</div>
 </body>
 </html>

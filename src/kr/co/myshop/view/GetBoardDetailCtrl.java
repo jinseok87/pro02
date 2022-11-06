@@ -18,26 +18,24 @@ import kr.co.myshop.vo.Notice;
 @WebServlet("/GetBoardDetailCtrl")
 public class GetBoardDetailCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private final static String DRIVER = "com.mysql.cj.jdbc.Driver";  //드라이버경로
-	private final static String URL = "jdbc:mysql://localhost:3306/myshop1?serverTimezone=Asia/Seoul";  //url /포트번호/데이터베이스이름/?serverTimezone=Asisa/Seoul; 
-	private final static String USER = "root";  //mysQl 접속 id
-	private final static String PASS = "a1234";  // 비밀번호
-	String sql = "";  //sql 작성을 위한 초기설정
-
+	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+	private static final String URL ="jdbc:mysql://localhost:3306/myshop1?serverTimezone=Asia/Seoul";
+	private static final String USER = "root";
+	private static final String PASS = "a1234";
+	String sql ="";
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int notiNo = Integer.parseInt(request.getParameter("notiNo"));
+		int notiNO = Integer.parseInt(request.getParameter("notiNo"));
 		try {
-			//데이터베이스연결
-			Class.forName(DRIVER);   //경로 설정한 드라이버 연결
-			sql = "select * from notice where notino=?";  //실행하고자하는 sql문 작성
-			Connection con = DriverManager.getConnection(URL, USER, PASS);  
-			PreparedStatement pstmt = con.prepareStatement(sql);  //
-			pstmt.setInt(1, notiNo);
+			Class.forName(DRIVER);
+			sql = "select * from notice where notiNo =?";
+			Connection con = DriverManager.getConnection(URL,USER,PASS);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, notiNO);
 			ResultSet rs = pstmt.executeQuery();
 			
-			//데이터베이스에서 결과 받아서 VO에 저장
 			Notice vo = new Notice();
-			if(rs.next()){
+			if(rs.next()) {
 				vo.setNotiNo(rs.getInt("notino"));
 				vo.setTitle(rs.getString("title"));
 				vo.setContent(rs.getString("content"));
@@ -46,7 +44,6 @@ public class GetBoardDetailCtrl extends HttpServlet {
 			}
 			request.setAttribute("notice", vo);
 			
-			//notice/boardList.jsp 에 포워딩
 			RequestDispatcher view = request.getRequestDispatcher("./notice/boardDetail.jsp");
 			view.forward(request, response);
 			
@@ -55,6 +52,6 @@ public class GetBoardDetailCtrl extends HttpServlet {
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}	
+		}
 	}
 }
