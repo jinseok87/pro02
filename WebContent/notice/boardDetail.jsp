@@ -49,11 +49,12 @@
 	</div>
 	<% if(sid.equals("admin")){ %>
 	<div class="btn-group">
-		<a href = "<%=request.getContextPath()%>/UpdateBoardListCtrl?notiNo=<%=vo.getNotiNo()%>">글수정</a>
+		<a href = "<%=request.getContextPath()%>/UpdateBoardCtrl?notiNo=<%=vo.getNotiNo()%>">글수정</a>
 	</div>
 	<div class="btn-group">
-		<a href = "<%=request.getContextPath()%>/DeleteBoardListCtrl?notiNo=<%=vo.getNotiNo()%>">삭제</a>
+		<a href = "<%=request.getContextPath()%>/DeleteBoardCtrl?notiNo=<%=vo.getNotiNo()%>">삭제</a>
 	</div>
 	<%} %>
+	<%@ include file = "../footer.jsp" %>
 </body>
 </html>

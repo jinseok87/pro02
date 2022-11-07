@@ -54,7 +54,7 @@
 				<input class="btn1 btn btn-dark" type="submit" name="submit" value="로그인"> <input class="btn2 btn btn-dark" type="reset" name="reset" value="취소">
 			</div>
 			<div class="link-group">
-				<a href="<%=request.getContextPath()%>/join.jsp" class="btn-a btn btn-light ">회원가입</a>
+				<a href="<%=request.getContextPath() %>/custom/membership.jsp" class="btn-a btn btn-light ">회원가입</a>
 			</div>
 		</form>
 	</div>

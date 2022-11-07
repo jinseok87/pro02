@@ -5,8 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,10 +13,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.co.myshop.vo.Notice;
+import kr.co.myshop.vo.Product;
 
-@WebServlet("/GetBoardListCtrl")
-public class GetBoardListCtrl extends HttpServlet {
+@WebServlet("/GetSalesProductCtrl")
+public class GetSalesProductCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
 	private final static String URL = "jdbc:mysql://localhost:3306/myshop1?serverTimezone=Asia/Seoul";
@@ -27,29 +25,38 @@ public class GetBoardListCtrl extends HttpServlet {
 	String sql = "";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int proNo = Integer.parseInt(request.getParameter("proNo"));
 		try {
 			//데이터베이스 연결
-			Class.forName(DRIVER);
-			sql = "select * from notice order by notino desc";
+			Class.forName(DRIVER);		
 			Connection con = DriverManager.getConnection(URL, USER, PASS);
+			sql = "select a.prono, a.cateno, a.proname, a.prospec, a.oriprice, ";			
+			sql = sql + "a.discountrate, a.propic, a.propic2, b.amount from ";
+			sql = sql + "product a right join wearing b on a.prono=b.prono ";
+			sql = sql + "where a.prono in (select b.prono from wearing) and ";
+			sql = sql + "a.prono=?";
 			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, proNo);
 			ResultSet rs = pstmt.executeQuery();
 			
-			//결과를 데이터베이스로 부터 받아서 리스트로 저장
-			List<Notice> notiList = new ArrayList<Notice>();
-			while(rs.next()){
-				Notice vo = new Notice();
-				vo.setNotiNo(rs.getInt("notino"));
-				vo.setTitle(rs.getString("title"));
-				vo.setContent(rs.getString("content"));
-				vo.setAuthor(rs.getString("author"));
-				vo.setResDate(rs.getString("resdate"));
-				notiList.add(vo);
+			//결과를 데이터베이스로 부터 받아서 VO에 저장
+			Product vo = new Product();
+			if(rs.next()){
+				vo.setProNo(rs.getInt("prono"));
+				vo.setCateNo(rs.getInt("cateno"));
+				vo.setProName(rs.getString("proname"));
+				vo.setProSpec(rs.getString("prospec"));
+				vo.setOriPrice(rs.getInt("oriprice"));
+				vo.setDiscountRate(rs.getDouble("discountrate"));
+				vo.setProPic(rs.getString("propic"));
+				vo.setProPic2(rs.getString("propic2"));
+				vo.setAmount(rs.getInt("amount"));
 			}
-			request.setAttribute("notiList", notiList);
 			
-			//notice/boardList.jsp 에 포워딩
-			RequestDispatcher view = request.getRequestDispatcher("./notice/boardList.jsp");
+			request.setAttribute("pro", vo);
+			
+			//product/productDetail.jsp 에 포워딩
+			RequestDispatcher view = request.getRequestDispatcher("./sales/salesProduct.jsp");
 			view.forward(request, response);
 			
 			rs.close();

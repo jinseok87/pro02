@@ -8,12 +8,13 @@
 <title>공지 수정 페이지</title>
 </head>
 <body>
+<%@include file = "../header.jsp" %>
 	<%
 	Notice vo = (Notice)request.getAttribute("notice");
 	%>
 	<div class="content">
 		<h2 class="title"> 공지 수정 페이지</h2>
-		<form action="<%=request.getContextPath() %>UpdateBoardCtrl" name = "frm1" class="frm1">
+		<form action="<%=request.getContextPath() %>/UpdateBoardCtrl" name = "frm1" class="frm1">
 			<table class="table">
 				<tbody>
 					<tr>
@@ -41,5 +42,6 @@
 			</div>
 		</form>
 	</div>
+	<%@include file = "../footer.jsp" %>
 </body>
 </html>
