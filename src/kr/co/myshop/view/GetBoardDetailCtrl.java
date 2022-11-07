@@ -24,10 +24,20 @@ public class GetBoardDetailCtrl extends HttpServlet {
 	private static final String PASS = "a1234";
 	String sql ="";
 	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		int notiNO = Integer.parseInt(request.getParameter("notiNo"));
 		try {
 			Class.forName(DRIVER);
+		/*	
+			con.setAutoCommit(false);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt();
+			ResultSet ts = pstmt.executeQuery();
+			
+			sql="update notice set visited=visited+1 where notino=?";
+					*/
 			sql = "select * from notice where notiNo =?";
 			Connection con = DriverManager.getConnection(URL,USER,PASS);
 			PreparedStatement pstmt = con.prepareStatement(sql);

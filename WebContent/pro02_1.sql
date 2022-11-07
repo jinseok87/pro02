@@ -14,7 +14,7 @@ create table custom(
 );
 
 insert into custom(cusId,cusPw,cusName,address,tel) values ('admin','a1234','관리자','','010-0000-0000');
-
+update custom set cusPw ="1234" where cusId = "admin";
 create table notice(
 	notiNo int primary key auto_increment,
     title varchar(200) not null,
@@ -22,6 +22,10 @@ create table notice(
     author varchar(20) not null,
     resDate dateTime default now()
 );
+
+alter table notice add  visited int default 0;
+
+
 
 insert into notice(title,content,author) values("테스트글1","테스트내용1","admin");
 insert into notice(title,content,author) values("테스트글2","테스트내용2","admin");

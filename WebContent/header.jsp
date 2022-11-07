@@ -25,7 +25,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">매트리스</a>
@@ -58,10 +58,6 @@
           <a class="dropdown-item" href="<%=request.getContextPath()%>/GetBoardListCtrl">notice</a>
           <a class="dropdown-item" href="#">Q&A</a>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
-      </li>
     </ul>
     <ul>
     	<% if(sid!=null) {%>

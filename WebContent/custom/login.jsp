@@ -37,7 +37,7 @@
 <body>
 	<div class="container">
 		<h2 class="title">로그인 페이지</h2>
-		<form class="frm1" action="<%=request.getContextPath()%>/CustomLoginCtrl" method="post">
+			<form name="frm1" id="frm1" action="<%=request.getContextPath() %>/CustomLoginCtrl" method="post">
 			<table class="table">
 				<tbody>
 					<tr>
