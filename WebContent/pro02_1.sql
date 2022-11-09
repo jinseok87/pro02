@@ -36,10 +36,18 @@ alter table notice add column visited int default 0;
 alter table notice drop column visited;
 
 -- 공지사항의 더미 데이터 추가
+<<<<<<< HEAD
 insert into notice(title, content, author) values ("테스트1", "테스트내용.", "admin");
 insert into notice(title, content, author) values ("테스트2", "테스트 내용2", "admin");
 insert into notice(title, content, author) values ("테스트 3", "테스트3", "admin");
 insert into notice(title, content, author) values ("테스트 4", "테스트4", "admin");
+=======
+insert into notice(title, content, author) values ("테스트 제목1", "테스트1 내용입니다.", "admin");
+insert into notice(title, content, author) values ("테스트 제목2", "테스트2 내용입니다.", "admin");
+insert into notice(title, content, author) values ("테스트 제목3", "테스트3 내용입니다.", "admin");
+insert into notice(title, content, author) values ("테스트 제목4", "테스트4 내용입니다.", "admin");
+insert into notice(title, content, author) values ("테스트 제목5", "테스트5 내용입니다.", "admin");
+>>>>>>> 79338a977668969d158aadd8ac48e8560aeab861
 commit;
 
 -- 공지사항의 글번호의 내림차순 조회
@@ -61,12 +69,21 @@ create table category(
 );
 
 -- 카테고리 데이터 등록
+<<<<<<< HEAD
 insert into category(cateName) values ("MATTRESS");
 insert into category(cateName) values ("PILLOW");
 insert into category(cateName) values ("SOFA");
 insert into category(cateName) values ("RECLINER");
 insert into category(cateName) values ("FRAME");
 insert into category(cateName) values ("ACCESSORIES");
+=======
+insert into category(cateName) values ("SUIT");
+insert into category(cateName) values ("OUTER");
+insert into category(cateName) values ("TOP");
+insert into category(cateName) values ("PANTS");
+insert into category(cateName) values ("SHOES");
+insert into category(cateName) values ("BAG");
+>>>>>>> 79338a977668969d158aadd8ac48e8560aeab861
 
 select * from category;
 commit;
@@ -86,6 +103,21 @@ commit;
 select * from product;
 delete from product;
 
+
+-- 입고 테이블 생성
+create table wearing(
+	proNo int primary key,
+    amount int
+);
+
+desc wearing;
+
+select * from wearing;
+
+commit;
+select * from product;
+delete from product;
+drop table product;
 
 -- 입고 테이블 생성
 create table wearing(
