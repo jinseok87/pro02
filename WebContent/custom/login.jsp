@@ -37,7 +37,7 @@
 <body>
 	<div class="container">
 		<h2 class="title">로그인 페이지</h2>
-			<form name="frm1" id="frm1" action="<%=request.getContextPath() %>/CustomLoginCtrl" method="post">
+		<form name="frm1" id="frm1" action="<%=request.getContextPath()%>/CustomLoginCtrl" method="post">
 			<table class="table">
 				<tbody>
 					<tr>
@@ -53,8 +53,8 @@
 			<div class="btn-group">
 				<input class="btn1 btn btn-dark" type="submit" name="submit" value="로그인"> <input class="btn2 btn btn-dark" type="reset" name="reset" value="취소">
 			</div>
-			<div class="link-group">
-				<a href="<%=request.getContextPath() %>/custom/membership.jsp" class="btn-a btn btn-light ">회원가입</a>
+			<div class="link-group">			
+				<a href="<%=request.getContextPath()%>/custom/membership.jsp" class="btn-a btn btn-light ">회원가입</a>
 			</div>
 		</form>
 	</div>

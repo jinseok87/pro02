@@ -4,7 +4,7 @@ use myshop1;
 
 create table custom(
 	cusId varchar(13) primary key,
-    cusPw varchar(50) not null,
+    cusPw varchar(200) not null,
     cusName varchar(30) not null,
     address varchar(500) not null,
     tel varchar(14) not null,
@@ -61,9 +61,10 @@ create table parsel(
     parselTel varchar(14),
     parselState int default 0
 );   
-insert into custom(cusId,cusPw,cusName,address,tel) values ('admin','a1234','관리자','','010-0000-0000');
+insert into custom(cusId,cusPw,cusName,address,tel) values ('admin','1234','관리자','','010-0000-0000');
+insert into custom(cusId,cusPw,cusName,address,tel) values ('jin','1234','진','','010-0000-0000');
 update custom set cusPw ="1234" where cusId = "admin";
-update custom set cusPw ="1234" where cusId = "admin";
+update custom set cusPw ="03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4" where cusId = "admin";
 
 
 
@@ -81,7 +82,7 @@ create table category(
 	cateNo int primary key auto_increment,
 	cateName varchar(50)
 );
-;
+
 select * from notice order by notiNo desc;
 select * from category;
 select * from custom;
