@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.co.myshop.app.D;
 import kr.co.myshop.vo.Notice;
 
 @WebServlet("/GetBoardListCtrl")

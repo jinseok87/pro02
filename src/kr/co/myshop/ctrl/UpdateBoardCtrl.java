@@ -45,7 +45,7 @@ public class UpdateBoardCtrl extends HttpServlet {
 			}
 			request.setAttribute("notice", vo);
 			
-		
+			//notice/updateBoard.jsp 에 포워딩
 			RequestDispatcher view = request.getRequestDispatcher("./notice/updateBoard.jsp");
 			view.forward(request, response);
 			
