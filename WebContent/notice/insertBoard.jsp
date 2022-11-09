@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="../common.css">
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 </style>
 </head>
 <body>
@@ -49,9 +55,9 @@
 					</tbody>
 				</table>
 				<div class="btn-group">
-					<input type="submit" name="submit-btn" class="btn btn-info" value="글 등록">
-					<input type="reset" name="reset-btn" class="btn btn-info" value="취소">
-					<a href="<%=request.getContextPath() %>/GetBoardListCtrl" class="btn btn-danger">목록으로</a>
+					<input type="submit" name="submit-btn" class="btn btn-dark" value="글 등록">
+					<input type="reset" name="reset-btn" class="btn btn-light" value="취소">
+					<a href="<%=request.getContextPath() %>/GetBoardListCtrl" class="btn btn-dark">목록으로</a>
 				</div>
 			</form>	
 		</main>

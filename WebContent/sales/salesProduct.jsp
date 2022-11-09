@@ -16,6 +16,12 @@
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
 .table tr td img { max-width:400px; height:auto; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 </style>
 </head>
 <body>
@@ -87,7 +93,7 @@
 							<td><input type="text" name="address1" id="address1" placeholder="기본 주소 입력" class="form-control" required /><br>
 							<input type="text" name="address2" id="address2" placeholder="상세 주소 입력" class="form-control" required /><br>
 							<input type="text" name="postcode" id="postcode" style="width:160px;float:left;margin-right:20px;" placeholder="우편번호" class="form-control" required>
-							<button type="button" id="post_btn" onclick="findAddr()" class="btn btn-primary" style="margin-bottom:36px;">우편번호 검색</button>
+							<button type="button" id="post_btn" onclick="findAddr()" class="btn btn-dark" style="margin-bottom:36px;">우편번호 검색</button>
 							</td>
 						</tr>
 						<tr>
@@ -101,7 +107,7 @@
 				<hr>
 				<h3>결제 정보</h3>
 				<div class="btn-group" style="margin-bottom:36px;">
-					<button type="button" id="pay" class="btn btn-primary">결제하기</button>
+					<button type="button" id="pay" class="btn btn-dark">결제하기</button>
 				</div>
 				<table class="table">
 					<tbody>
@@ -129,7 +135,7 @@
 				</table>
 				<div class="btn-group" style="margin-bottom:36px;">
 				<% if(vo.getAmount()!=0) { %>
-				<input type="submit" class="btn btn-primary" value="제품 구매">
+				<input type="submit" class="btn btn-dark" value="제품 구매">
 				<% } %>
 				</div>
 			</form>
@@ -273,11 +279,11 @@
 			}
 			</script>
 			<div class="btn-group">
-				<a href="<%=request.getContextPath() %>/GetProductListCtrl" class="btn btn-danger">목록으로</a>
+				<a href="<%=request.getContextPath() %>/GetProductListCtrl" class="btn btn-dark">목록으로</a>
 				<% if(sid.equals("admin")) { %>
-				<a href="<%=request.getContextPath() %>/DeleteProductCtrl?proNo=<%=vo.getProNo() %>" class="btn btn-primary">제품 삭제</a>
-				<a href="<%=request.getContextPath() %>/UpdateProductCtrl?proNo=<%=vo.getProNo() %>" class="btn btn-danger">제품 정보 수정</a>
-				<a href="<%=request.getContextPath() %>/GetProductWearingCtrl?proNo=<%=vo.getProNo() %>" class="btn btn-danger">제품 입고</a>
+				<a href="<%=request.getContextPath() %>/DeleteProductCtrl?proNo=<%=vo.getProNo() %>" class="btn btn-light">제품 삭제</a>
+				<a href="<%=request.getContextPath() %>/UpdateProductCtrl?proNo=<%=vo.getProNo() %>" class="btn btn-dark">제품 정보 수정</a>
+				<a href="<%=request.getContextPath() %>/GetProductWearingCtrl?proNo=<%=vo.getProNo() %>" class="btn btn-light">제품 입고</a>
 				<% } %>
 			</div>
 		</main>

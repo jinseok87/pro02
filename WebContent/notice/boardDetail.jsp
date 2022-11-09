@@ -14,6 +14,12 @@
 
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 </style>
 </head>
 <body>
@@ -61,10 +67,10 @@
 				</tbody>
 			</table>
 			<div class="btn-group">
-				<a href="<%=request.getContextPath() %>/GetBoardListCtrl" class="btn btn-danger">목록으로</a>
+				<a href="<%=request.getContextPath() %>/GetBoardListCtrl" class="btn btn-dark">목록으로</a>
 				<% if(sid!=null && sid.equals("admin")) { %>
-				<a href="<%=request.getContextPath() %>/DeleteBoardCtrl?notiNo=<%=vo.getNotiNo() %>" class="btn btn-primary">글 삭제</a>
-				<a href="<%=request.getContextPath() %>/UpdateBoardCtrl?notiNo=<%=vo.getNotiNo() %>" class="btn btn-danger">글 수정</a>
+				<a href="<%=request.getContextPath() %>/DeleteBoardCtrl?notiNo=<%=vo.getNotiNo() %>" class="btn btn-light">글 삭제</a>
+				<a href="<%=request.getContextPath() %>/UpdateBoardCtrl?notiNo=<%=vo.getNotiNo() %>" class="btn btn-dark">글 수정</a>
 				<% } %>
 			</div>
 		</main>

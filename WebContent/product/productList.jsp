@@ -13,6 +13,16 @@
 <link rel="stylesheet" href="common.css">
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
+.title{
+	text-align: center;
+	color : $gray-200;
+}
 </style>
 <style>
 .in_container { clear:both; width:1400px; margin:0 auto; }
@@ -26,6 +36,19 @@
 <%@ include file="../header.jsp" %>
 <%
 	List<Product> proList = (ArrayList<Product>) request.getAttribute("proList");
+	/*
+	int cateNo =0;
+	int cateNo = (int)request.getAttribute("cateNo");
+	String cateName= "";
+	if(String.valueOf(cateNo)!=null){
+		if(cateNo==1)){
+			cateName = "MATTRESS";
+		}else if(cateNo==2){
+			cateName = PILLOW
+		}else if(cateNo==3){
+			
+		}
+	} */
 %>
 <div class="container-fluid" id="content">
 	<div class="row" id="content_row">
@@ -37,19 +60,19 @@
 		<% } else { %>
 		<main class="content container">
 		<% } %>
-			<h2 class="title">제품 목록</h2>
+			<h1 class="title">Product</h1>
 			<ul class="row" id="best">
 			<% for(int i=0;i<proList.size();i++) {
 				Product pro = proList.get(i);
 			%>
 				<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
 					<div class="card" style="width: 18rem;">
-					  <img src="<%=request.getContextPath() %>/upload/<%=pro.getProPic() %>" class="card-img-top" alt="<%=pro.getProName() %>">
+					  <a href="<%=request.getContextPath() %>/GetProductDetailCtrl?proNo=<%=pro.getProNo() %>" class="btn btn-light"><img src="<%=request.getContextPath() %>/upload/<%=pro.getProPic() %>" class="card-img-top" alt="<%=pro.getProName() %>"></a>
 					  <div class="card-body">
 					    <h5 class="card-title"><%=pro.getProName() %></h5>
 					    <p class="card-text"><%=pro.getProSpec() %></p>
 					    <p class="card-text"><strong style="color:red;"><%=pro.getProPrice() %>원</strong> (<del><%=pro.getOriPrice() %>)</del></p>
-					    <a href="<%=request.getContextPath() %>/GetProductDetailCtrl?proNo=<%=pro.getProNo() %>" class="btn btn-primary">제품 상세보기</a>
+					    <a href="<%=request.getContextPath() %>/GetProductDetailCtrl?proNo=<%=pro.getProNo() %>" class="btn btn-light">제품 상세보기</a>
 					  </div>
 					</div>
 				</li>

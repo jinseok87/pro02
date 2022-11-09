@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="../common.css">
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 </style>
 </head>
 <body>
@@ -60,8 +66,8 @@
 					</tbody>
 				</table>
 				<div class="btn-group">
-					<button type="submit" class="btn btn-primary">글 쓰기</button>
-					<a href="<%=request.getContextPath() %>/GetQnaListCtrl.do" class="btn btn-info">목록으로</a>
+					<button type="submit" class="btn btn-dark">글 쓰기</button>
+					<a href="<%=request.getContextPath() %>/GetQnaListCtrl.do" class="btn btn-dark">목록으로</a>
 				</div>
 			</form>
 		</main>

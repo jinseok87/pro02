@@ -14,6 +14,12 @@
 
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 </style>
 </head>
 <body>
@@ -62,8 +68,8 @@
 					</tbody>
 				</table>
 				<div class="btn-group">
-					<button type="submit" class="btn btn-danger">제품 입고</button>
-					<a href="<%=request.getContextPath() %>/GetProductListCtrl" class="btn btn-primary">목록으로</a>
+					<button type="submit" class="btn btn-dark">제품 입고</button>
+					<a href="<%=request.getContextPath() %>/GetProductListCtrl" class="btn btn-dark">목록으로</a>
 				</div>
 			</form>
 		</main>

@@ -15,6 +15,12 @@
 .title { padding-top:36px; padding-bottom:20px; }
 .agree_fr { width: 900px; white-space:pre-wrap; margin: 10px auto; 
 padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 </style>
 </head>
 <body>
@@ -913,7 +919,7 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 	</div>
 	<br><hr><br>	
 	<div class="btn-group">
-		<button type="button" id="in_btn1" class="btn btn-primary">다음 단계</button>
+		<button type="button" id="in_btn1" class="btn btn-dark">다음 단계</button>
 	</div>
 	<script>
 	var ck_item1 = document.getElementById("ck_item1");

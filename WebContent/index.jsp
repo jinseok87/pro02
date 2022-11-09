@@ -38,21 +38,21 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
+        <div class="carousel-item active" data-bs-interval="5000">
       <img src="./image/main_visual1.jpg" class="d-block w-100" alt="main_1">
       <div class="carousel-caption d-none d-md-block">
         <h5>EASE BY TEMPUR</h5>
         <p>매트리스 구매시 25% 할인</p>
       </div>
     </div>
-    <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="2000">
       <img src="./image/main_visual2.jpg" class="d-block w-100" alt="main_2">
       <div class="carousel-caption d-none d-md-block">
         <h5>EASE BY TEMPUR</h5>
         <p>베개 구매시 25% 할인</p>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="2000">
       <img src="./image/main_visual3.jpg" class="d-block w-100" alt="main_3">
       <div class="carousel-caption d-none d-md-block">
         <h5>템퍼 SMARTCOOL</h5>

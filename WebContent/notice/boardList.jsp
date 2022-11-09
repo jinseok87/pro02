@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="common.css">
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 </style>
 </head>
 <body>
@@ -30,7 +36,7 @@
 		<% } else { %>
 		<main class="content container">
 		<% } %>
-			<h2 class="title">공지사항 목록</h2>
+			<h2 class="title">게시판 목록</h2>
 			<table class="table">
 				<thead>
 					<tr>

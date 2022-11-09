@@ -18,6 +18,12 @@
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
 #cusPw { width:780px; float:left; margin-right:30px; margin-left:6px; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 </style>
 </head>
 <body>
@@ -44,7 +50,7 @@
 				        String key = "%02x";
 						cusPw = AES256.decryptAES256(custom.getCusPw(), key); */
 						%>
-							<input type="text" name="cusPw" id="cusPw" placeholder="비밀번호 입력" value="<%=custom.getCusPw() %>" class="form-control" readonly /><button type="button" class="btn btn-primary" onclick="defaultPass()">비밀번호 초기화</button>
+							<input type="text" name="cusPw" id="cusPw" placeholder="비밀번호 입력" value="<%=custom.getCusPw() %>" class="form-control" readonly /><button type="button" class="btn btn-dark" onclick="defaultPass()">비밀번호 초기화</button>
 							<input type="hidden" name="changePw" id="changePw" value="no">
 						</td>
 					</tr>
@@ -113,8 +119,8 @@
 				</tbody>
 			</table>
 			<div class="btn-group">
-				<input type="submit" name="submit-btn" class="btn btn-info" value="정보수정">
-				<input type="reset" name="reset-btn" class="btn btn-info" value="취소">
+				<input type="submit" name="submit-btn" class="btn btn-dark" value="정보수정">
+				<input type="reset" name="reset-btn" class="btn btn-dark" value="취소">
 			</div>
 		</form>	
 		<script>

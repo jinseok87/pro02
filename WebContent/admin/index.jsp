@@ -15,6 +15,12 @@
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
 #content_row { min-height:calc(100vh - 84px); }
+.nav-item>a{
+	color : white;
+}
+.nav-item{
+	color : white;
+}
 </style>
 </head>
 <body>

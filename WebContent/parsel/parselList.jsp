@@ -14,6 +14,12 @@
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
 .tb_ck  { display:none; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 #parsel0, #parsel1, #parsel2, #parsel3 { display:none; }
 #tb_ck1:checked ~ #parsel0 { display:table; }
 #tb_ck2:checked ~ #parsel1 { display:table; }
@@ -43,10 +49,10 @@
 			<input type="radio" name="tb_ck" class="tb_ck" id="tb_ck3">
 			<input type="radio" name="tb_ck" class="tb_ck" id="tb_ck4">
 			<div class="btn-group" id="tb_btn_box">
-				<label for="tb_ck1" class="btn btn-primary">배송전</label>
-				<label for="tb_ck2" class="btn btn-outline-primary">배송중</label>
-				<label for="tb_ck3" class="btn btn-outline-primary">도착</label>
-				<label for="tb_ck4" class="btn btn-outline-primary">구매결정</label>
+				<label for="tb_ck1" class="btn btn-light btn-outline-dark"">배송전</label>
+				<label for="tb_ck2" class="btn btn-dark btn-outline-light">배송중</label>
+				<label for="tb_ck3" class="btn btn-light btn-outline-dark">도착</label>
+				<label for="tb_ck4" class="btn btn-dark btn-outline-light">구매결정</label>
 			</div>
 			<table class="table" id="parsel0">
 				<caption><h3>배송전</h3></caption>

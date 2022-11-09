@@ -16,6 +16,19 @@
 	padding-top: 36px;
 	padding-bottom: 20px;
 }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
+.btn-group>p{
+ margin-left: 20px;
+ margin-top: 5px;
+ font-size : 20px;
+ color: white;
+ background-color: gray;
+}
 </style>
 </head>
 <body>
@@ -106,16 +119,16 @@
 						<%
 							} else {
 						%>
-						<a href='UpdateQnaCtrl.do?no=<%=vo.getNo()%>' class="btn btn-light">답글 수정</a> <a href='DeleteQnaCtrl.do?no=<%=vo.getNo()%>' class="btn btn-dark">답글 삭제</a>
+						<a href='UpdateQnaCtrl.do?no=<%=vo.getNo()%>' class="btn btn-dark">답글 수정</a> <a href='DeleteQnaCtrl.do?no=<%=vo.getNo()%>' class="btn btn-light">답글 삭제</a>
 						<%
 							}
 						} else if (sid.equals(vo.getAuthor())) {
 						%>
-						<a href='UpdateQnaCtrl.do?no=<%=vo.getNo()%>' class="btn btn-light">글 수정</a> <a href='DeleteQnaCtrl.do?parno=<%=vo.getNo()%>' class="btn btn-dark">글 삭제</a>
+						<a href='UpdateQnaCtrl.do?no=<%=vo.getNo()%>' class="btn btn-dark">글 수정</a> <a href='DeleteQnaCtrl.do?parno=<%=vo.getNo()%>' class="btn btn-light">글 삭제</a>
 						<%
 							} else {
 						%>
-						<p style="clear: both">글 작성자가 아닙니다.</p>
+						<p style="clear: both"> 작성자가 아니면 수정할 수 없습니다.</p>
 						<%
 							}
 						%>

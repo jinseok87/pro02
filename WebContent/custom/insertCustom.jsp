@@ -15,6 +15,12 @@
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
 #cusId { width:780px; float:left; margin-right:30px; margin-left:6px; }
+.nav-item{
+	color : white;
+}
+.nav-item>a{
+	color : white;
+}
 </style>
 </head>
 <body>
@@ -29,7 +35,7 @@
 					<td>
 						<div class="form-row">
 							<input type="text" name="cusId" id="cusId" placeholder="아이디 입력" class="form-control" autofocus required />
-							<input type="button" class="btn btn-primary" value="아이디 중복 확인" onclick="idCheck()">
+							<input type="button" class="btn btn-dark" value="아이디 중복 확인" onclick="idCheck()">
 							<input type="hidden" name="idck" id="idck" value="no">
 						</div>
 					</td>
@@ -51,7 +57,7 @@
 					<td><input type="text" name="address1" id="address1" placeholder="기본 주소 입력" class="form-control" required /><br>
 					<input type="text" name="address2" id="address2" placeholder="상세 주소 입력" class="form-control" required /><br>
 					<input type="text" name="postcode" id="postcode" style="width:160px;float:left;margin-right:20px;" placeholder="우편번호" class="form-control">
-					<button id="post_btn" onclick="findAddr()" class="btn btn-primary">우편번호 검색</button>
+					<button id="post_btn" onclick="findAddr()" class="btn btn-dark">우편번호 검색</button>
 					</td>
 				</tr>
 				<tr>
@@ -61,9 +67,9 @@
 			</tbody>
 		</table>
 		<div class="btn-group">
-			<input type="submit" name="submit-btn" class="btn btn-info" value="회원가입">
-			<input type="reset" name="reset-btn" class="btn btn-info" value="취소">
-			<a href="<%=request.getContextPath() %>/custom/login.jsp" class="btn btn-danger">로그인</a>
+			<input type="submit" name="submit-btn" class="btn btn-dark" value="회원가입">
+			<input type="reset" name="reset-btn" class="btn btn-light" value="취소">
+			<a href="<%=request.getContextPath() %>/custom/login.jsp" class="btn btn-dark">로그인</a>
 		</div>
 	</form>	
 	<script>
