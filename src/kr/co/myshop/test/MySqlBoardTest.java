@@ -13,8 +13,8 @@ import org.junit.Test;
 
 public class MySqlBoardTest {
 	private final static Logger log = Logger.getGlobal();
-	private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
-	private final static String URL = "jdbc:mysql://localhost:3306/myshop1?serverTimezone=Asia/Seoul";
+	private final static String DRIVER = "com.mariadb.jdbc.Driver";
+	private final static String URL = "jdbc:mariadb://localhost:3306/myshop1?serverTimezone=Asia/Seoul";
 	private final static String USER = "root";
 	private final static String PASS = "a1234";
 	String sql = "";
